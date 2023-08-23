@@ -1,0 +1,21 @@
+<div class="card">
+    <div class="card-header">
+        Sign Up
+    </div>  
+    <div class="card-body"> 
+        <form class="form-container" [formGroup]="formulario">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="name@example.com" formControlName="email">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="password" formControlName="password">
+            </div>
+            <button type="button" class="btn btn-primary" (click)="signup()">Iniciar Sesión</button>
+            <p class="ion-padding ion-text-center">¿Ya tiene una cuenta?  
+                <a routerLink="/signin">Iniciar Sesión</a>
+            </p>
+        </form>
+    </div>
+</div>
