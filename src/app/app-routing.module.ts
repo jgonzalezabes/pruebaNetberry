@@ -5,17 +5,13 @@ import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { AuthGuard } from './guards/auth.guard';
 import { NoauthGuard } from './guards/noauth.guard';
+import { TareasComponent } from './components/tareas/tareas.component';
 
 const routes: Routes = [
   {
     path:'',
     redirectTo: 'home',
     pathMatch: 'full'
-  },
-  {
-    path:'home',
-    component: HomeComponent,
-    canActivate:[AuthGuard]
   },
   {
     path:'signin',
@@ -26,7 +22,17 @@ const routes: Routes = [
     path:'signup',
     component: SignupComponent,
     canActivate:[NoauthGuard]
-  }
+  },
+  {
+    path:'home',
+    component: HomeComponent,
+    canActivate:[AuthGuard]
+  },
+  {
+    path:'tareas',
+    component: TareasComponent,
+    canActivate:[AuthGuard]
+  },
   
 ];
 

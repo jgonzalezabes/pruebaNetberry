@@ -1,20 +1,12 @@
 import { Injectable } from '@angular/core';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  //Array con los usuarios del sistema. Al no tener base de datos, los usuarios creados mediante la aplicación serán eliminados al refrescar la página web.
-  usuarios=[
-      {
-        email:'user@example.com',
-        password:'1234',
-        tareas:[]
-      }
-    ]
-
-  constructor() { }
+  constructor(private userService:UserService) { }
 
   signin(email:string, password:string){
     //Aquí podríamos realizar una llamada al backend donde se realizaría el proceso de autorización y podríamos elaborar un token
@@ -45,13 +37,14 @@ export class AuthService {
       password,
       tareas:[]
     }
-    this.usuarios.push(newUser);
+    this.userService.agregarUsuario(newUser);
     localStorage.setItem('usuario', email);
     return 1;
   }
 
   existeUsuario(email:string){
-    for(let usuario of this.usuarios){
+    let usuarios = this.userService.getUsuarios();
+    for(let usuario of usuarios){
       if(usuario.email === email){
         return usuario;
       }

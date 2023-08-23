@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+
+<div class="p-2">
+    <h4>Tareas de {{id}}</h4>
+    
+    <div class="p-4 pb-0">
+        <div class="row" *ngFor="let tarea of this.tareas, index as i">
+            <p class="col-5"><b>{{i+1}}.&nbsp;&nbsp;</b>{{tarea}}</p>
+            <button class="btn btn-danger col-1" (click)="eliminarTarea()">Eliminar</button>
+        </div>
+        
+        <input placeholder="+ Añadir una tarea">
+    </div>
+</div>
+
+<app-footer></app-footer>
