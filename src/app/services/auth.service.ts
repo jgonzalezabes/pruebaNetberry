@@ -10,7 +10,8 @@ export class AuthService {
 
   signin(email:string, password:string){
     //Aquí podríamos realizar una llamada al backend donde se realizaría el proceso de autorización y podríamos elaborar un token
-    //con el id del usuario de la base de datos, teniendo así una forma de saber que usuario está realizando las operaciones en cada momento. 
+    //con el id del usuario de la base de datos, teniendo así una forma de saber que usuario está realizando las operaciones en cada momento,
+    //el cual sería enviado a través de una petición con la ayuda de un interceptor que cambiará la cabecera de esta. 
     //Antes de enviar los datos al servicio deberíamos encriptar la contraseña.
 
     //Al no tener backend, realizaremos la operación directamente desde este servicio sin elaborar ningún token, únicamente subiremos el email del usuario al localStorage

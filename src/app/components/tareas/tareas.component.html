@@ -6,10 +6,12 @@
     <div class="p-4 pb-0">
         <div class="row" *ngFor="let tarea of this.tareas, index as i">
             <p class="col-5"><b>{{i+1}}.&nbsp;&nbsp;</b>{{tarea}}</p>
-            <button class="btn btn-danger col-1" (click)="eliminarTarea()">Eliminar</button>
+            <button class="btn btn-primary col-1 ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Actualizar</button>
+            <button class="btn btn-danger col-1 ms-2" (click)="eliminarTarea(i)">Eliminar</button>
         </div>
         
-        <input placeholder="+ Añadir una tarea">
+        <input class="col-5" placeholder="+ Añadir una tarea" [(ngModel)]="nuevaTarea"> 
+        <button class="btn btn-primary ms-2" (click)="agregarTarea()">Agregar Tarea</button>
     </div>
 </div>
 
