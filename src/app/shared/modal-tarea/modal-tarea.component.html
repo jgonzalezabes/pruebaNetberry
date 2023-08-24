@@ -1,0 +1,22 @@
+<div class="p-2">
+    <h1 mat-dialog-title><b>Actualizar Tarea</b></h1>
+    <div mat-dialog-content>
+    <p>Introduzca los nuevos valores para la tarea</p>
+    <div>
+        <label for="text" class="form-label">Descripción</label>
+        <input type="text" class="form-control" id="text" [(ngModel)]="data.tarea.descripcion">
+    </div>
+    <div>
+        <label for="tag" class="form-label">Tag</label>
+        <select [(ngModel)]="data.tarea.tag" id="tag_{{data.tarea.id}}">
+            <option value="data.tag" selected></option>
+            <option *ngFor="let tag of tagsList" [value]="tag">
+            {{tag}}
+            </option>
+        </select>
+    </div>
+    </div>
+    <div mat-dialog-actions>
+    <button class="btn btn-primary"  [mat-dialog-close]="data.tarea" cdkFocusInitial>Aceptar</button>
+    </div>
+</div>

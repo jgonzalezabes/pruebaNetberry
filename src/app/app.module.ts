@@ -11,6 +11,9 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { TareasComponent } from './components/tareas/tareas.component';
+import { ModalTareaComponent } from './shared/modal-tarea/modal-tarea.component';
+
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -20,13 +23,15 @@ import { TareasComponent } from './components/tareas/tareas.component';
     NavbarComponent,
     FooterComponent,
     SignupComponent,
-    TareasComponent
+    TareasComponent,
+    ModalTareaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
